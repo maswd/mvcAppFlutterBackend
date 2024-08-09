@@ -36,14 +36,15 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
     validate: {
-        validator: (value) => {
-            // check if password is at least 8 characters long
-          return value.length >=8;
-        },
-        message:"password must be at least 8 characters long"
+      validator: function (value) {
+        return  value.length >= 8;  // اطمینان حاصل کنید که پسورد خالی نیست و طول آن حداقل ۸ کاراکتر است
       },
+      message: "Password must be at least 8 characters long",
+    },
   },
 });
+
+
 
 const User = mongoose.model("User", userSchema);
 
