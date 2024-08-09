@@ -6,6 +6,7 @@ const bannerRouter = require("./routes/banner");
 const categoryRouter = require("./routes/category");
 const subcategoryRouter = require("./routes/sub_category");
 const productRouter = require("./routes/product");
+const productReviewRouter = require("./routes/product_review");
 
 
 //defind the port number the server will listen on
@@ -24,6 +25,7 @@ app.use(bannerRouter);
 app.use(categoryRouter);
 app.use(subcategoryRouter);
 app.use(productRouter);
+app.use(productReviewRouter);
 
 
 mongoose.connect(DB).then(() => {
